@@ -1,0 +1,41 @@
+{
+  "context": 16384,
+  "gpu": "name, memory.total [MiB], driver_version\nTesla V100-SXM2-32GB, 32768 MiB, 580.178.04\n",
+  "image_sha256": "e190e63838e86f553c4a56605cb811b8a5c2b704e40efd4ad1411d107430069c",
+  "max_output_tokens": 1024,
+  "max_requests": 6,
+  "model_digests": {
+    "qwen2.5-coder:14b": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+    "qwen2.5-coder:7b": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+  },
+  "models": [
+    "qwen2.5-coder:7b",
+    "qwen2.5-coder:14b"
+  ],
+  "paid_provider_calls": 0,
+  "quotas": {
+    "classification": 400,
+    "coding": 200,
+    "extraction": 400,
+    "grounded_qa": 500,
+    "ideation": 200,
+    "math": 500,
+    "summarization": 400,
+    "tabular": 400
+  },
+  "runtime": {
+    "version": "0.35.1"
+  },
+  "runtime_binary_sha256": "8fd655c8fde7b524dc3a64ae1006f9e8d0344dec93b1796fc9f87b7c5179fbb9",
+  "seeds": [
+    440,
+    441
+  ],
+  "slurm_job_id": "56201662",
+  "smoke_audit_sha256": "547ca8dbe20a7d60904f6b9ef3cb3f6b5a54ce7a7372d829e20ca2a1eb78dcd2",
+  "target_groups": 3000,
+  "target_runs": 12000,
+  "temperature": 0,
+  "tokenizers_verified": true,
+  "tool_probe": "👋 INFO     This is SWE-agent version 1.1.0                                     \n            (hash='0f3acafacabc0def8cc76b4e48acb4b6cf302cb9') with SWE-ReX      \n            version 1.4.0 (rex_hash='unavailable').                             \n{\"agent\": \"1.1.0\", \"interfaces\": [\"lo\"], \"network_isolation\": true}\n"
+}

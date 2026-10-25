@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "locked_at_utc": "2026-10-21T21:00:45.136328+00:00",
+  "alpha": 0.1,
+  "unit": "task group; all four declared model/seed assignments jointly",
+  "base_budget": "max(1, frozen q90 predictor)",
+  "score": "max_over_group((actual_total_tokens-base_budget)/base_budget)",
+  "order_statistic": "ceil((n_groups+1)*0.9), one-indexed",
+  "correction": "max(0, selected_order_statistic)",
+  "deployed_budget": "ceil(base_budget*(1+correction))",
+  "point_predictor": "frozen absolute-error histogram gradient boosting; clamp predictions to zero",
+  "no_refitting": true,
+  "no_model_selection": true,
+  "no_family_specific_corrections": true,
+  "confirmation_accessed": false,
+  "inputs_sha256": "5e2b575e7e764e632782b484554db5d44d0f0d25bda19f0c061ad722408eb4e7",
+  "point_sha256": "b4726da8c6de6fedca25b90c87fdc2ec27f9b3b5faed4e20d98739b9eb0bd687",
+  "budget_sha256": "848385bc63f0e126636257cdf3f69ea67ae8f600d623b63b2c940f0e7615f9d3",
+  "feature_code_sha256": "7dcef413a693f3e1cf163ddde578062914a95edbf261f1c4daa92d01824f2224",
+  "script_sha256": "b230c8cc6b22393d5cd2215f9d1b0d5205e93d1279cfac7981d159639cf0a42a",
+  "data_hashes": {
+    "assignment_dispositions.csv": "7dd084f3726b4ea2ce9087fa0caec3391e4ed685746e8f789f852513105ddd57",
+    "audit_summary.json": "4de849c366d591429b301a58fac5a7abaa843649be07bc89d0525b5a8f839013",
+    "audited_visible_runs.csv": "1af589092f4f4a4c83e6948e80f89c83352bb57e3e4c6677d4ec46d4da90e291"
+  },
+  "confirmation_plan": {
+    "primary": "MAE over all complete confirmation attempts",
+    "secondary": [
+      "RMSE",
+      "R2",
+      "mean signed error",
+      "90th percentile absolute error",
+      "tail MAE and signed bias using training 90th percentile threshold",
+      "row upper-budget coverage",
+      "all-runs group upper-budget coverage",
+      "mean upper budget",
+      "mean budget exceedance",
+      "q90 pinball loss",
+      "family/model slices"
+    ],
+    "predictors": "Evaluate frozen selected point model and calibrated budget once; no subsequent tuning labeled as final-test evaluation",
+    "missingness": "Report dispositions separately; no target imputation; group joint coverage requires all four attempts"
+  },
+  "limitation": "Empirical calibration; nominal marginal coverage requires exchangeability assumptions not established by this purposive deterministic sample"
+}

@@ -1,0 +1,37 @@
+{
+  "reviewer": "Consolidated recorded source reviewers and cross-family source-overlap review",
+  "candidates_sha256": "c715edac6274a8b9bd8534f8e88477b54cd4653b71305937da4b02cda2aeb2fb",
+  "relations_sha256": "4f175f63faaad577da904e5cab131c735b323cd29416963e7e3ca1111c053fd8",
+  "rationale": "Row eligibility reviews plus exact source/context grouping over all candidates and recorded source/variant relation reviews. Prior and both smoke campaigns are excluded transitively. 3000 selected groups satisfy all family quotas. This is a reproducible grouping protocol, not mathematical proof of semantic independence or exhaustive factual verification.",
+  "review_scope": {
+    "purpose": "Usable tasks for cumulative-token measurement; not a benchmark-accuracy certification",
+    "coding": "Bounded source and supplied-test coherence; no host execution of reference code",
+    "govreport": "Sampled source usability, except documented full reads; not exhaustive full-report/reference verification",
+    "other_families": "Recorded full instruction/context/reference inspection for approved rows",
+    "quality": "Reference-based scores diagnostic only; disputed or imperfect labels documented in reviews",
+    "complexity": "unrated; natural input length is not a difficulty label",
+    "grouping": "Mandatory exact normalization plus reviewed concrete task/source relations; generic topic/operation alone is not a shared template",
+    "limitations": "Unselected source records are not all semantically reviewed; relatedness below screening thresholds may remain undetected"
+  },
+  "smoke_manifest_sha256": "f77c9cf774d286c2c970fbc6b9e92b42bd290f15d3f3aa9353b8ae714a239193",
+  "selected_tasks": 3000,
+  "selected_counts": {
+    "grounded_qa": 500,
+    "extraction": 400,
+    "summarization": 400,
+    "math": 500,
+    "classification": 400,
+    "ideation": 200,
+    "tabular": 400,
+    "coding": 200
+  },
+  "selected_by_band": {
+    "513-2048": 266,
+    "<=512": 2403,
+    "4097-8192": 251,
+    "2049-4096": 80
+  },
+  "reviewed_records": 4523,
+  "relation_pairs": 1160,
+  "pending_pairs_outside_selection": 1
+}

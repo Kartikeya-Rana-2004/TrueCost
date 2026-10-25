@@ -1,0 +1,19 @@
+{
+  "manifest_sha256": "ee380785a4222add8b4177f267a758a26265851138c1ca8c89ab35cf3977a828",
+  "frozen_tasks_sha256": "6368d8d4cef469f4b8b7fb3b3aaa02d18c9d209b1d3da68d2e0ee08a949b50e6",
+  "export_sha256": "5e2b575e7e764e632782b484554db5d44d0f0d25bda19f0c061ad722408eb4e7",
+  "partition": "calibration",
+  "task_groups": 450,
+  "outcomes_exported": false,
+  "confirmation_exported": false,
+  "fields": [
+    "task_id",
+    "group_id",
+    "family",
+    "source_id",
+    "size_band",
+    "instruction",
+    "context",
+    "public_tests"
+  ]
+}

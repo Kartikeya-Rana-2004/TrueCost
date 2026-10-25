@@ -1,0 +1,24 @@
+[
+  {
+    "split_seed": 440,
+    "baseline_mae": 396.33990427665265,
+    "new_mae": 359.9803985448922,
+    "relative_mae_reduction_pct": 9.173819072828168,
+    "task_weighted_mean_reduction": 36.289026138273336,
+    "task_resampling_interval_95": [
+      26.889816407531676,
+      46.090347943807096
+    ]
+  },
+  {
+    "split_seed": 917,
+    "baseline_mae": 402.1043318184064,
+    "new_mae": 359.43613157863217,
+    "relative_mae_reduction_pct": 10.611226207591207,
+    "task_weighted_mean_reduction": 42.490670159289536,
+    "task_resampling_interval_95": [
+      30.953470306012147,
+      54.4371160925305
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "manifest_sha256": "ee380785a4222add8b4177f267a758a26265851138c1ca8c89ab35cf3977a828",
+  "strict_audit_passed": true,
+  "planned": 1800,
+  "complete": 1800,
+  "shards": [
+    {
+      "path": "/storage/home/kvr5648/truecost_roar/TrueCost_LargeScale_12000_Reviewed_v2/frozen/outputs/sealed_confirmation/confirmation-m0-s440-00",
+      "planned": 450,
+      "complete": 450,
+      "pending": 0
+    },
+    {
+      "path": "/storage/home/kvr5648/truecost_roar/TrueCost_LargeScale_12000_Reviewed_v2/frozen/outputs/sealed_confirmation/confirmation-m0-s441-00",
+      "planned": 450,
+      "complete": 450,
+      "pending": 0
+    },
+    {
+      "path": "/storage/home/kvr5648/truecost_roar/TrueCost_LargeScale_12000_Reviewed_v2/frozen/outputs/sealed_confirmation/confirmation-m1-s440-00",
+      "planned": 450,
+      "complete": 450,
+      "pending": 0
+    },
+    {
+      "path": "/storage/home/kvr5648/truecost_roar/TrueCost_LargeScale_12000_Reviewed_v2/frozen/outputs/sealed_confirmation/confirmation-m1-s441-00",
+      "planned": 450,
+      "complete": 450,
+      "pending": 0
+    }
+  ],
+  "audit_code_sha256": "d526a9d2a04665aefe717fd85c3e39ae9507da5fa6755b483ae8f083bb05fd9c",
+  "transport_code_sha256": "d97dbac037c51eea04895fb7d78f5da99a1cd8f0ba4636840803111ec06f2e28"
+}

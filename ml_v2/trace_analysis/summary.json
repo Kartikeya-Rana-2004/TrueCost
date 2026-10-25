@@ -1,0 +1,29 @@
+{
+  "training_runs": 8396,
+  "task_groups": 2100,
+  "raw_archive_sha256": "7cfaeb38214d96b8f6604d18ad86aaaba5e55b711721bb6fe5836edc5843d792",
+  "request_cap_runs": 912,
+  "request_cap_error_share": 0.5967110538439009,
+  "top_one_percent_runs": 84,
+  "top_one_percent_error_share": 0.33332796318385083,
+  "output_cap_runs": 66,
+  "diagnostic_only_fields": [
+    "requests",
+    "termination",
+    "output_cap_requests",
+    "hit_output_cap",
+    "first_request_input",
+    "input_after_first_request",
+    "input_after_first_share",
+    "max_request_input",
+    "last_request_input",
+    "diagnostic_actions"
+  ],
+  "calibration_or_confirmation_traces_used": false,
+  "limitations": [
+    "Input after first request includes newly retrieved context and history; it is not a direct measure of waste.",
+    "Output at 1024 tokens is a ceiling indicator, not proof that a larger limit would improve quality.",
+    "Associations with post-run behavior diagnose errors but are not causal estimates.",
+    "Export/ledger consistency checks do not replace original strict raw-evidence audit."
+  ]
+}

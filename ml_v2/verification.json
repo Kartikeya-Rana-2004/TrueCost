@@ -1,0 +1,11 @@
+{
+  "v1_release_hashes_verified": 63,
+  "v1_snapshot_files_read_only": true,
+  "post_run_field_perturbation_leaves_features_unchanged": true,
+  "baseline_predictions_match_original_v1_cv": true,
+  "fold_assignments_match_v1": true,
+  "all_group_replicates_together": true,
+  "training_only_v2": true,
+  "promoted_candidate": null,
+  "fresh_independent_evaluation_required": true
+}

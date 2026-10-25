@@ -1,0 +1,45 @@
+seed=917 fold=1 baseline MAE=477.3 0.6s
+seed=917 fold=1 rich_rf_leaf5 MAE=456.4 2.8s
+seed=917 fold=1 rich_rf_leaf2 MAE=471.9 3.3s
+seed=917 fold=1 rich_extra_leaf3 MAE=470.3 1.5s
+seed=917 fold=1 rich_boost_log MAE=472.3 0.4s
+seed=917 fold=1 rich_boost_absolute MAE=456.9 0.5s
+seed=917 fold=1 text_ridge_log MAE=757.0
+seed=917 fold=2 baseline MAE=341.0 0.6s
+seed=917 fold=2 rich_rf_leaf5 MAE=338.6 2.9s
+seed=917 fold=2 rich_rf_leaf2 MAE=342.0 3.2s
+seed=917 fold=2 rich_extra_leaf3 MAE=322.9 1.5s
+seed=917 fold=2 rich_boost_log MAE=321.7 0.4s
+seed=917 fold=2 rich_boost_absolute MAE=292.1 0.4s
+seed=917 fold=2 text_ridge_log MAE=582.9
+seed=917 fold=3 baseline MAE=346.2 0.6s
+seed=917 fold=3 rich_rf_leaf5 MAE=343.2 2.8s
+seed=917 fold=3 rich_rf_leaf2 MAE=357.3 3.4s
+seed=917 fold=3 rich_extra_leaf3 MAE=344.5 1.5s
+seed=917 fold=3 rich_boost_log MAE=366.1 0.4s
+seed=917 fold=3 rich_boost_absolute MAE=314.9 0.5s
+seed=917 fold=3 text_ridge_log MAE=592.2
+seed=917 fold=4 baseline MAE=497.3 0.6s
+seed=917 fold=4 rich_rf_leaf5 MAE=445.2 2.7s
+seed=917 fold=4 rich_rf_leaf2 MAE=458.3 3.1s
+seed=917 fold=4 rich_extra_leaf3 MAE=456.5 1.5s
+seed=917 fold=4 rich_boost_log MAE=474.3 0.4s
+seed=917 fold=4 rich_boost_absolute MAE=415.5 0.5s
+seed=917 fold=4 text_ridge_log MAE=766.1
+seed=917 fold=5 baseline MAE=348.7 0.6s
+seed=917 fold=5 rich_rf_leaf5 MAE=329.9 2.7s
+seed=917 fold=5 rich_rf_leaf2 MAE=348.9 3.2s
+seed=917 fold=5 rich_extra_leaf3 MAE=325.9 1.5s
+seed=917 fold=5 rich_boost_log MAE=353.3 0.4s
+seed=917 fold=5 rich_boost_absolute MAE=317.7 0.5s
+seed=917 fold=5 text_ridge_log MAE=646.5
+              model        mae        rmse       r2        bias  p90_absolute_error  tail_n    tail_mae    tail_bias
+rich_boost_absolute 359.436132 1765.748720 0.589783 -165.780495          767.223053     838 1700.010291 -1570.587593
+        blend_trees 380.020932 1765.753010 0.589781 -105.102507          871.585291     838 1819.523194 -1225.704891
+      rich_rf_leaf5 382.634815 1765.592153 0.589856 -106.986449          872.636726     838 1831.921765 -1235.909023
+   rich_extra_leaf3 384.006808 1773.373032 0.586233 -103.218565          921.881650     838 1829.030876 -1215.500760
+       blend_text20 393.567503 1764.756506 0.590244 -131.923830          840.962987     838 1963.267249 -1344.627799
+      rich_rf_leaf2 395.677749 1798.659480 0.574349  -98.064939          895.699208     838 1911.483358 -1176.518917
+     rich_boost_log 397.513085 1770.026221 0.587793  -99.614244          936.805231     838 1865.250182 -1249.684677
+           baseline 402.104332 1781.999618 0.582198 -112.623384          930.930274     838 1931.818754 -1286.711740
+     text_ridge_log 668.924338 1937.619329 0.506039 -239.209123         1673.966436     838 3023.831178 -1820.319427

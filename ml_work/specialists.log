@@ -1,0 +1,20 @@
+440 specialist fold 1 complete
+440 specialist fold 2 complete
+440 specialist fold 3 complete
+440 specialist fold 4 complete
+440 specialist fold 5 complete
+             model        mae        rmse       r2        bias  p90_absolute_error  tail_n    tail_mae    tail_bias
+          by_model 363.088895 1764.596335 0.590318 -151.136814          809.277041     842 1675.815130 -1544.109590
+   by_model_family 364.875110 1763.407360 0.590870 -133.910826          817.180844     842 1612.912613 -1489.177401
+         by_family 365.403830 1764.214361 0.590496 -141.880963          827.435471     842 1620.590422 -1502.280173
+rich_boost_squared 531.638419 1903.755546 0.523154   18.313526         1192.723598     842 2505.251852  -821.141270
+917 specialist fold 1 complete
+917 specialist fold 2 complete
+917 specialist fold 3 complete
+917 specialist fold 4 complete
+917 specialist fold 5 complete
+             model        mae        rmse       r2        bias  p90_absolute_error  tail_n    tail_mae    tail_bias
+          by_model 358.967873 1764.696679 0.590272 -153.521401          765.968059     838 1669.121533 -1543.046730
+         by_family 362.234281 1763.015786 0.591052 -142.670267          795.771095     838 1640.997963 -1520.758753
+   by_model_family 364.128945 1763.846627 0.590667 -140.993257          807.109839     838 1627.228795 -1498.040222
+rich_boost_squared 547.175068 1960.155762 0.494482   40.328608         1247.627424     838 2713.425278  -594.311379

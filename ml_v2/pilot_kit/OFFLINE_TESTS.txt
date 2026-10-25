@@ -1,0 +1,19 @@
+test_01_all_128_mock_attempts_pass_original_audit (__main__.PilotTests.test_01_all_128_mock_attempts_pass_original_audit) ... ok
+test_02_duplicate_group_and_quota_rejected (__main__.PilotTests.test_02_duplicate_group_and_quota_rejected) ... ok
+test_03_frozen_payload_tamper_detected (__main__.PilotTests.test_03_frozen_payload_tamper_detected) ... ok
+test_04_foreign_v1_root_rejected (__main__.PilotTests.test_04_foreign_v1_root_rejected) ... ok
+test_05_request_cap_retains_all_counters (__main__.PilotTests.test_05_request_cap_retains_all_counters) ... ok
+test_06_incomplete_attempt_blocks_audit_and_resume (__main__.PilotTests.test_06_incomplete_attempt_blocks_audit_and_resume) ... ok
+test_07_altered_raw_response_rejected (__main__.PilotTests.test_07_altered_raw_response_rejected) ... ok
+test_08_lock_and_walltime_guards (__main__.PilotTests.test_08_lock_and_walltime_guards) ... ok
+test_09_reference_not_public (__main__.PilotTests.test_09_reference_not_public) ... ok
+test_10_atomic_installer_and_no_overwrite (__main__.PilotTests.test_10_atomic_installer_and_no_overwrite) ... Pilot freeze validated: 32 groups / 128 attempts
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.407s
+
+OK
+INSTALLED: /private/var/folders/jd/g466b06s657f4h7krs0s63fw0000gn/T/tmpalqp0swm/new-pilot
+NEXT: cd /private/var/folders/jd/g466b06s657f4h7krs0s63fw0000gn/T/tmpalqp0swm/new-pilot && python pilot.py preflight
+No jobs submitted. Runtime asset paths must pass preflight before submission.

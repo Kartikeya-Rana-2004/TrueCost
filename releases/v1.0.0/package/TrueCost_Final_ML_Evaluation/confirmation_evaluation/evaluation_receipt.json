@@ -1,0 +1,21 @@
+{
+  "ready_for_confirmation_sha256": "602308899472b83293eaa11cd1b2fd6fb94fe9180a118e701f523249b5325eb7",
+  "input_provenance": {
+    "partition": "confirmation",
+    "manifest_sha256": "ee380785a4222add8b4177f267a758a26265851138c1ca8c89ab35cf3977a828",
+    "frozen_tasks_sha256": "6368d8d4cef469f4b8b7fb3b3aaa02d18c9d209b1d3da68d2e0ee08a949b50e6",
+    "tasks_sha256": "da6f2167e17f91e785dc4e30666623729ac606a34f4b18a2f3c74af5772f3a83",
+    "runs_sha256": "ce1af3685b35d2b2506ec8c4b5a284afabf39eef5678c50f86f7594de5c50287",
+    "strict_audit_passed": true,
+    "audit_evidence_reference": "confirmation_audit_summary.json",
+    "audit_summary_sha256": "d46ad99b2b3b075e4df71deef0e2a4eca03713d5d97eb82a72008934d66b44fb",
+    "task_groups": 450,
+    "complete_runs": 1800
+  },
+  "confirmation_read": true,
+  "complete_rows": 1800,
+  "task_groups": 450,
+  "no_refit": true,
+  "no_tuning": true,
+  "warning": "Any changes informed by these outcomes require new independent evaluation data."
+}

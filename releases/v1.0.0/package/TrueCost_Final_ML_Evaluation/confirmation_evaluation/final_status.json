@@ -1,0 +1,33 @@
+{
+  "stage": "Frozen confirmation evaluation complete",
+  "evaluation_runs": 1,
+  "complete_confirmation_rows": 1800,
+  "confirmation_task_groups": 450,
+  "covered_task_groups": 412,
+  "covered_runs": 1716,
+  "train_calibration_confirmation_groups_disjoint": true,
+  "locked_artifacts_unchanged": true,
+  "models_refitted": false,
+  "models_tuned": false,
+  "future_rule": "Any modeling changes informed by confirmation results need a new independent evaluation dataset.",
+  "primary_results": {
+    "stratum": "all",
+    "label": "all",
+    "n": 1800,
+    "groups": 450,
+    "mae": 323.7818088677711,
+    "rmse": 1404.382374688683,
+    "r2": 0.7052057509171785,
+    "bias": -142.70119697785856,
+    "p90_absolute_error": 767.8336411761318,
+    "tail_threshold": 5241.0,
+    "tail_n": 176,
+    "tail_mae": 1414.0895648800497,
+    "tail_bias": -1313.4332497846556,
+    "row_budget_coverage": 0.9533333333333334,
+    "joint_group_budget_coverage": 0.9155555555555556,
+    "mean_budget": 2592.851111111111,
+    "mean_exceedance": 79.94111111111111,
+    "q90_pinball": 157.97833333333335
+  }
+}

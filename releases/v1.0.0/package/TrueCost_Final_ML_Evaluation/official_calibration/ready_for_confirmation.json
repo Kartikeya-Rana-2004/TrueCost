@@ -1,0 +1,17 @@
+{
+  "status": "Ready for one-time confirmation; confirmation outcomes not read",
+  "locked_files": {
+    "selected_models/point.joblib": "b4726da8c6de6fedca25b90c87fdc2ec27f9b3b5faed4e20d98739b9eb0bd687",
+    "selected_models/budget_uncalibrated.joblib": "848385bc63f0e126636257cdf3f69ea67ae8f600d623b63b2c940f0e7615f9d3",
+    "selected_models/development_freeze.json": "441f232af2b2dd90fb6ea2a04fc06480de8ab015f128e464113c76de567c91e6",
+    "improve_predictions.py": "7dcef413a693f3e1cf163ddde578062914a95edbf261f1c4daa92d01824f2224",
+    "official_calibration/calibration_parameters.json": "0ba46bf632f0320d313fc1ed1b011054e952e81100c98133e633e28e7b3ab1f0",
+    "official_calibration/locked_analysis_protocol.json": "89bc20b7c77b23b34d122d6d12439bb87a4292945a380c8a8f5ab9f0dca21725",
+    "official_calibration/point_diagnostics.json": "3e4070891f6d8966ec6cc6c9c1236c69bfe8102b6b031968290aa2ceac4f0ecd",
+    "evaluate_confirmation.py": "32e391bb00a42008360a95f347d5028989e35de5f500396a750de77253bb20e3"
+  },
+  "point_model_frozen": true,
+  "budget_method_frozen": true,
+  "calibration_complete": true,
+  "confirmation_complete": false
+}

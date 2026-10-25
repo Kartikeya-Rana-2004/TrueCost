@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "telemetry_complete": true,
+  "input_tokens": 1300,
+  "output_tokens": 500,
+  "total_tokens": 1800,
+  "task_success": true,
+  "requests": 3,
+  "retries": 0,
+  "tool_calls": 2,
+  "elapsed_seconds": 24.5
+}

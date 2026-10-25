@@ -1,0 +1,15 @@
+limit experts seed=440 fold=1 complete
+limit experts seed=440 fold=2 complete
+limit experts seed=440 fold=3 complete
+limit experts seed=440 fold=4 complete
+limit experts seed=440 fold=5 complete
+limit experts seed=917 fold=1 complete
+limit experts seed=917 fold=2 complete
+limit experts seed=917 fold=3 complete
+limit experts seed=917 fold=4 complete
+limit experts seed=917 fold=5 complete
+ seed           model        mae        rmse       r2        bias  p90_absolute_error  tail_n    tail_mae    tail_bias
+  440 limit_risk_soft 385.268619 1770.469597 0.587587 -105.567995          895.773030     842 1672.770546 -1369.726917
+  440 limit_risk_hard 371.188559 1772.622442 0.586583 -146.227583          841.202125     842 1620.388413 -1473.813395
+  917 limit_risk_soft 392.790325 1776.144803 0.584939 -110.359857          907.430429     838 1738.973825 -1366.896567
+  917 limit_risk_hard 378.767504 1780.728322 0.582794 -154.250528          857.939805     838 1656.971103 -1538.632812

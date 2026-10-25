@@ -1,0 +1,8 @@
+budget fold 1 complete correction=0.136
+budget fold 2 complete correction=0.174
+budget fold 3 complete correction=0.114
+budget fold 4 complete correction=0.158
+budget fold 5 complete correction=0.120
+              predictor family    n  row_coverage  group_coverage  mean_budget  q90_pinball  mean_exceedance
+       q90_uncalibrated    all 8396      0.815388         0.73381  2277.373096   189.460260       142.127428
+group_calibrated_budget    all 8396      0.939971         0.89619  2595.617629   196.448906       117.291622

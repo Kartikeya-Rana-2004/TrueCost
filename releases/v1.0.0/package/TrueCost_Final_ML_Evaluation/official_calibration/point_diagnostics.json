@@ -1,0 +1,12 @@
+{
+  "mae": 345.695521729542,
+  "rmse": 1229.4039816367651,
+  "bias": -156.02626041971214,
+  "r2": 0.737572130999119,
+  "p90_absolute_error": 813.4337121401369,
+  "tail_threshold_from_training": 5241.0,
+  "tail_n": 208,
+  "tail_mae": 1458.2578080860526,
+  "tail_bias": -1381.4181035669974,
+  "interpretation": "Calibration diagnostics only; not used to select or refit predictors and not final-test evidence"
+}

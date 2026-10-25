@@ -1,0 +1,11 @@
+{
+  "calibration_input_groups": 450,
+  "full_model_seed_coverage": true,
+  "prediction_cli_rows": 900,
+  "prediction_cli_matches_all_1800_calibration_rows": true,
+  "order_statistic_rank_verified": true,
+  "no_post_run_predictors": true,
+  "models_unchanged": true,
+  "confirmation_outcomes_read": false,
+  "evaluator_status": "Syntax checked; end-to-end confirmation run deliberately deferred until audited confirmation export is available"
+}

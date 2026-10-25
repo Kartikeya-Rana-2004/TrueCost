@@ -1,0 +1,40 @@
+{
+  "v1_manifest_sha256": "ee380785a4222add8b4177f267a758a26265851138c1ca8c89ab35cf3977a828",
+  "source_files": {
+    "frozen/manifest.json": "ee380785a4222add8b4177f267a758a26265851138c1ca8c89ab35cf3977a828",
+    "frozen/tasks.json": "6368d8d4cef469f4b8b7fb3b3aaa02d18c9d209b1d3da68d2e0ee08a949b50e6",
+    "frozen/config.json": "1692d8921d75bf14066419809f4f74aa65a3a251110006a2b5e36835fce53e32",
+    "smoke/tasks.json": "d6dd44980d9b75e9219d39e833f691e8780934118902a1d4e6df044bc3318ae7",
+    "data/candidates.json": "c715edac6274a8b9bd8534f8e88477b54cd4653b71305937da4b02cda2aeb2fb",
+    "data/reviews.json": "92b66f482299dfe340986fba5ae9c951bee71ff618e56c52961aaa1dd06d59d7",
+    "data/relations.json": "ad51b8207d54b18a48b009e4104fb07575d762fd01c5404c94adeda77ea96db3",
+    "data/group_review.json": "4ec65cb2bc0f2d54a7630f18b17001a5405ad3a90b60f2029895b554065a59dd",
+    "data/exclusions.json": "d6868ab90c868420257b07553c50c1bc0dbb860d07bb55149b0ada521c0c6831",
+    "prepare/grouping.py": "8063e7f9f0d412b7df30550de616390e7a10ece6e116b3067dc161d8294a69f6"
+  },
+  "eligible_records": 162,
+  "eligible_groups": 159,
+  "selection_rule": "4 slots per family; deterministic augmenting-path group matching; slot preferences cycle short-to-long natural size bands; task tie-break SHA256 truecost-v2-pilot-440 prefix",
+  "groups": 32,
+  "attempts": 128,
+  "partition": "development",
+  "future_calibration_or_final_test_eligible": false,
+  "by_family": {
+    "classification": 4,
+    "coding": 4,
+    "extraction": 4,
+    "grounded_qa": 4,
+    "ideation": 4,
+    "math": 4,
+    "summarization": 4,
+    "tabular": 4
+  },
+  "by_size": {
+    "<=512": 28,
+    "2049-4096": 2,
+    "4097-8192": 1,
+    "513-2048": 1
+  },
+  "all_original_pilot_smoke_and_reserved_exclusions_replayed": true,
+  "limitations": "Existing reviewed relation decisions reduce known overlap, not all possible semantic overlap or model pretraining exposure."
+}

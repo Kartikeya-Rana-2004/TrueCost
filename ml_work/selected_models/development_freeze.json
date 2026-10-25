@@ -1,0 +1,103 @@
+{
+  "status": "Development configuration selected; official calibration pending; confirmation sealed",
+  "target": "Cumulative total processed tokens under fixed six-request bounded controller",
+  "point_parameters": {
+    "loss": "absolute_error",
+    "max_iter": 300,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 25,
+    "l2_regularization": 10,
+    "early_stopping": false,
+    "random_state": 440
+  },
+  "budget_parameters": {
+    "loss": "quantile",
+    "max_iter": 300,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 25,
+    "l2_regularization": 10,
+    "early_stopping": false,
+    "random_state": 440,
+    "quantile": 0.9
+  },
+  "features": [
+    "family",
+    "source_id",
+    "size_band",
+    "model",
+    "instruction_chars",
+    "context_chars",
+    "instruction_words",
+    "context_words",
+    "context_lines",
+    "has_public_tests",
+    "tests_chars",
+    "total_chars",
+    "total_words",
+    "unique_word_ratio",
+    "digit_fraction",
+    "punctuation_fraction",
+    "newline_count",
+    "question_count",
+    "avg_word_chars",
+    "instruction_context_ratio",
+    "numbers",
+    "sentences",
+    "table_separators",
+    "code_markers",
+    "log_instruction_chars",
+    "log_context_chars",
+    "log_total_chars",
+    "log_total_words",
+    "log_tests_chars"
+  ],
+  "feature_code_sha256": "7dcef413a693f3e1cf163ddde578062914a95edbf261f1c4daa92d01824f2224",
+  "training_rows": 8396,
+  "task_groups": 2100,
+  "complete_seed_pairs": 4198,
+  "identical_seed_pair_token_totals": 4198,
+  "task_inputs_sha256": "d91c7bae62d9d4941deb2fc9f3cf6f485556af5df75a9fbb1b5ab3137111d803",
+  "data_hashes": {
+    "assignment_dispositions.csv": "7dd084f3726b4ea2ce9087fa0caec3391e4ed685746e8f789f852513105ddd57",
+    "audit_summary.json": "4de849c366d591429b301a58fac5a7abaa843649be07bc89d0525b5a8f839013",
+    "audited_visible_runs.csv": "1af589092f4f4a4c83e6948e80f89c83352bb57e3e4c6677d4ec46d4da90e291"
+  },
+  "comparisons": [
+    {
+      "split_seed": 440,
+      "baseline_mae": 396.33990427665265,
+      "new_mae": 359.9803985448922,
+      "relative_mae_reduction_pct": 9.173819072828168,
+      "task_weighted_mean_reduction": 36.289026138273336,
+      "task_resampling_interval_95": [
+        26.889816407531676,
+        46.090347943807096
+      ]
+    },
+    {
+      "split_seed": 917,
+      "baseline_mae": 402.1043318184064,
+      "new_mae": 359.43613157863217,
+      "relative_mae_reduction_pct": 10.611226207591207,
+      "task_weighted_mean_reduction": 42.490670159289536,
+      "task_resampling_interval_95": [
+        30.953470306012147,
+        54.4371160925305
+      ]
+    }
+  ],
+  "calibration_outcomes_used": false,
+  "confirmation_outcomes_used": false,
+  "missing_totals_imputed": false,
+  "python": "3.12.5 (v3.12.5:ff3bc82f7c9, Aug  7 2024, 05:32:06) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "sklearn": "1.8.0",
+  "numpy": "1.26.4",
+  "pandas": "2.1.4",
+  "checks": [
+    "Data hashes verified",
+    "All fit rows are training",
+    "Group folds disjoint",
+    "Post-run columns ignored by feature extraction",
+    "Saved model predictions round-trip unchanged"
+  ]
+}

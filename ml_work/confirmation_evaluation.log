@@ -1,0 +1,2 @@
+stratum label    n  groups        mae        rmse       r2        bias  p90_absolute_error  tail_threshold  tail_n    tail_mae   tail_bias  row_budget_coverage  joint_group_budget_coverage  mean_budget  mean_exceedance  q90_pinball
+    all   all 1800     450 323.781809 1404.382375 0.705206 -142.701197          767.833641          5241.0     176 1414.089565 -1313.43325             0.953333                     0.915556  2592.851111        79.941111   157.978333

@@ -1,0 +1,14 @@
+{
+  "alpha": 0.1,
+  "calibration_groups": 450,
+  "order_statistic_rank": 406,
+  "normalized_correction": 0.13695943800781887,
+  "budget_multiplier": 1.136959438007819,
+  "point_sha256": "b4726da8c6de6fedca25b90c87fdc2ec27f9b3b5faed4e20d98739b9eb0bd687",
+  "budget_sha256": "848385bc63f0e126636257cdf3f69ea67ae8f600d623b63b2c940f0e7615f9d3",
+  "protocol_sha256": "89bc20b7c77b23b34d122d6d12439bb87a4292945a380c8a8f5ab9f0dca21725",
+  "calibration_inputs_sha256": "5e2b575e7e764e632782b484554db5d44d0f0d25bda19f0c061ad722408eb4e7",
+  "calibration_rows": 1800,
+  "confirmation_outcomes_used": false,
+  "scope": "Complete telemetry under frozen controller; joint upper bound over the four model/seed assignments of a task group; exchangeability caveat applies"
+}

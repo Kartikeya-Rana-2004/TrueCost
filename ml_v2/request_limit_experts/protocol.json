@@ -1,0 +1,12 @@
+{
+  "training_only": true,
+  "models_saved": false,
+  "calibration_outcomes_used": false,
+  "confirmation_outcomes_used": false,
+  "expert_fit_labels": "Realized six-request limit in training fold only",
+  "routing_input": "Predicted probability from group-disjoint outer-fold classifier",
+  "hard_threshold": 0.5,
+  "soft_rule": "Probability-weighted conditional median predictions; exploratory heuristic",
+  "candidate_rationale": "Chosen after training-trace/risk diagnostics; all reported scores remain development evidence, not a final evaluation",
+  "fresh_evaluation_required": true
+}

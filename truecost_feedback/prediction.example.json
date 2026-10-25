@@ -1,0 +1,10 @@
+{
+  "task_id": "new-task-001",
+  "group_id": "new-task-group-001",
+  "model": "qwen2.5-coder:7b",
+  "model_version": "replace-with-point-model-sha256",
+  "controller_version": "six-request-v1",
+  "partition": "feedback",
+  "predicted_total_tokens": 1500,
+  "upper_budget": 2600
+}
