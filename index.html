@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrueCost | Pre-Execution AI Agent Token & Budget Predictor</title>
+  <title>TrueCost | Pre-Execution AI Agent Token &amp; Budget Predictor</title>
   <meta name="description" content="Predict AI-agent cumulative token usage and calibrated upper budgets before execution. Penn State DS 440 Capstone by Kartikeya Rana.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,20 +18,21 @@
         extend: {
           colors: {
             brand: {
-              400: '#a78bfa',
-              500: '#8b5cf6',
-              600: '#7c3aed',
+              400: '#38bdf8',
+              500: '#0284c7',
+              600: '#0369a1',
             },
             dark: {
-              950: '#07090e',
-              900: '#0d111a',
-              800: '#141a27',
-              700: '#1e2638'
+              950: '#080d1a',
+              900: '#0f172a',
+              800: '#1e293b',
+              700: '#334155'
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"DM Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
           }
         }
       }
@@ -39,53 +40,81 @@
   </script>
   <style>
     body {
-      background-color: #07090e;
-      color: #f3f4f6;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #080d1a;
+      color: #f1f5f9;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.6;
     }
-    .glass-card {
-      background: rgba(13, 17, 26, 0.75);
-      backdrop-filter: blur(14px);
+    h1 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    h2 { font-size: 1.75rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; }
+    h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    ::selection {
+      background-color: #0284c7;
+      color: #080d1a;
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080d1a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+    .panel {
+      background-color: #0f172a;
       border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1.5rem;
     }
-    .glass-card:hover {
-      border-color: rgba(139, 92, 246, 0.25);
+    .panel:hover {
+      border-color: rgba(56, 189, 248, 0.25);
     }
     .badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.375rem;
       padding: 0.25rem 0.65rem;
-      border-radius: 9999px;
+      border-radius: 6px;
       font-size: 0.75rem;
       font-weight: 600;
     }
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-purple-500 selection:text-white">
+<body class="min-h-screen flex flex-col">
 
   <!-- Top Ribbon -->
-  <div class="bg-gradient-to-r from-purple-950/80 via-dark-900 to-indigo-950/80 border-b border-purple-500/20 px-4 py-2 text-xs text-center text-purple-300 flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+  <div class="bg-dark-900 border-b border-sky-500/20 px-4 py-2 text-xs text-center text-sky-300 flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-sky-400"></span>
     <span><strong>Penn State DS 440 Capstone:</strong> Evaluated on 1,800 unseen runs across 8 task families on Roar Supercomputer.</span>
     <span class="hidden md:inline text-gray-600">•</span>
     <a href="https://github.com/Kartikeya-Rana-2004/TrueCost" target="_blank" class="underline hover:text-white font-semibold">View Repository on GitHub →</a>
   </div>
 
   <!-- Header -->
-  <header class="glass-card border-b border-white/10 px-6 py-4 sticky top-0 z-50">
+  <header class="border-b border-white/10 bg-dark-950/80 backdrop-blur-md px-6 py-4 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-purple-500/20">
+        <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center font-bold text-sky-400 text-lg">
           TC
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="text-lg font-bold text-white tracking-tight">TrueCost</h1>
-            <span class="badge-pill bg-purple-500/15 text-purple-300 border border-purple-500/30">AI Agent Token Predictor</span>
-            <span class="badge-pill bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">Roar HPC</span>
+            <h1 class="text-base font-display font-bold text-white tracking-tight">TrueCost</h1>
+            <span class="badge-pill bg-sky-500/15 text-sky-300 border border-sky-500/30 font-mono">AI Agent Token Predictor</span>
+            <span class="badge-pill bg-slate-800 text-slate-300 border border-slate-700 font-mono">Roar HPC</span>
           </div>
-          <p class="text-xs text-gray-400">Pre-Execution Token Estimation & Calibrated Upper Budgets • Penn State DS 440</p>
+          <p class="text-xs text-gray-400">Pre-Execution Token Estimation &amp; Calibrated Upper Budgets • Penn State DS 440</p>
         </div>
       </div>
 
@@ -96,7 +125,7 @@
         <a href="https://kartikeya-rana-2004.github.io/market-trend-forecast/" target="_blank" class="px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-cyan-300 border border-cyan-500/30 font-semibold transition">
           <i class="fa-solid fa-chart-line mr-1"></i> Market Engine
         </a>
-        <a href="https://github.com/Kartikeya-Rana-2004/TrueCost" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold transition shadow">
+        <a href="https://github.com/Kartikeya-Rana-2004/TrueCost" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold transition">
           <i class="fa-brands fa-github mr-1"></i> GitHub Repo
         </a>
       </div>
@@ -108,24 +137,24 @@
 
     <!-- KPI Metric Cards from 1,800-run confirmation -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="p-5 rounded-2xl glass-card">
+      <div class="panel p-6">
         <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Mean Absolute Error (MAE)</span>
-        <div class="text-3xl font-extrabold text-purple-400 font-mono mt-1">323.78</div>
+        <div class="text-3xl font-display font-extrabold text-sky-400 mt-1 tabular">323.78</div>
         <span class="text-xs text-emerald-400 font-medium">tokens across unseen tasks</span>
       </div>
-      <div class="p-5 rounded-2xl glass-card">
+      <div class="panel p-6">
         <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Upper-Budget Coverage</span>
-        <div class="text-3xl font-extrabold text-emerald-400 font-mono mt-1">95.33%</div>
+        <div class="text-3xl font-display font-extrabold text-emerald-400 mt-1 tabular">95.33%</div>
         <span class="text-xs text-gray-400">1,716 / 1,800 runs held</span>
       </div>
-      <div class="p-5 rounded-2xl glass-card">
+      <div class="panel p-6">
         <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Joint Task-Group Coverage</span>
-        <div class="text-3xl font-extrabold text-blue-400 font-mono mt-1">91.56%</div>
+        <div class="text-3xl font-display font-extrabold text-white mt-1 tabular">91.56%</div>
         <span class="text-xs text-gray-400">Exceeds 90% formal target</span>
       </div>
-      <div class="p-5 rounded-2xl glass-card">
+      <div class="panel p-6">
         <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Roar HPC Campaign</span>
-        <div class="text-3xl font-extrabold text-indigo-400 font-mono mt-1">12,000</div>
+        <div class="text-3xl font-display font-extrabold text-teal-400 mt-1 tabular">12,000</div>
         <span class="text-xs text-gray-400">Slurm executions logged</span>
       </div>
     </div>
@@ -134,33 +163,33 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
       <!-- Input Controls -->
-      <div class="lg:col-span-5 p-6 rounded-2xl glass-card flex flex-col justify-between">
+      <div class="lg:col-span-5 panel p-6 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-sliders text-purple-400"></i> Pre-Execution Task Parameters
-            </h3>
-            <span class="badge-pill bg-purple-500/20 text-purple-300 font-mono text-[10px]">V1 Frozen Model</span>
+            <h2 class="text-base font-display font-bold text-white tracking-tight flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-sky-400"></i> Pre-Execution Task Parameters
+            </h2>
+            <span class="badge-pill bg-sky-500/20 text-sky-300 font-mono text-[10px]">V1 Frozen Model</span>
           </div>
 
           <div class="space-y-4 text-xs">
             <div>
               <label class="block text-gray-300 font-semibold mb-1">Task Family / Workload</label>
-              <select id="tc-family" onchange="runPrediction()" class="w-full p-2.5 rounded-xl bg-dark-950 border border-white/10 text-white font-mono">
-                <option value="coding" selected>Coding & Debugging (Multi-step tool calls)</option>
+              <select id="tc-family" onchange="runPrediction()" class="w-full p-2.5 rounded-lg bg-dark-950 border border-white/10 text-white font-mono">
+                <option value="coding" selected>Coding &amp; Debugging (Multi-step tool calls)</option>
                 <option value="extraction">Structured Information Extraction</option>
                 <option value="summarization">Long-form Document Summarization</option>
                 <option value="grounded_qa">Grounded Question Answering</option>
                 <option value="math">Mathematical Reasoning</option>
-                <option value="tabular">Tabular & SQL Reasoning</option>
+                <option value="tabular">Tabular &amp; SQL Reasoning</option>
                 <option value="classification">Text Classification</option>
-                <option value="ideation">Open Ideation & Planning</option>
+                <option value="ideation">Open Ideation &amp; Planning</option>
               </select>
             </div>
 
             <div>
               <label class="block text-gray-300 font-semibold mb-1">Target Model Architecture</label>
-              <select id="tc-model" onchange="runPrediction()" class="w-full p-2.5 rounded-xl bg-dark-950 border border-white/10 text-white font-mono">
+              <select id="tc-model" onchange="runPrediction()" class="w-full p-2.5 rounded-lg bg-dark-950 border border-white/10 text-white font-mono">
                 <option value="qwen-7b" selected>Qwen2.5-Coder 7B (Local Roar Deployment)</option>
                 <option value="qwen-14b">Qwen2.5-Coder 14B (Local Roar Deployment)</option>
               </select>
@@ -169,65 +198,66 @@
             <div>
               <div class="flex justify-between text-gray-300 mb-1">
                 <span class="font-semibold">Prompt Text Length (Characters):</span>
-                <span id="tc-prompt-len-val" class="font-mono text-purple-400 font-bold">1,250 chars</span>
+                <span id="tc-prompt-len-val" class="font-mono text-sky-400 font-bold tabular">1,250 chars</span>
               </div>
-              <input type="range" id="tc-prompt-len" min="200" max="6000" step="150" value="1250" oninput="runPrediction()" class="w-full accent-purple-400">
+              <input type="range" id="tc-prompt-len" min="200" max="6000" step="150" value="1250" oninput="runPrediction()" class="w-full accent-sky-400">
             </div>
 
             <div>
               <div class="flex justify-between text-gray-300 mb-1">
                 <span class="font-semibold">Expected Max Controller Depth (Tool Turns):</span>
-                <span id="tc-turns-val" class="font-mono text-purple-400 font-bold">4 turns</span>
+                <span id="tc-turns-val" class="font-mono text-sky-400 font-bold tabular">4 turns</span>
               </div>
-              <input type="range" id="tc-turns" min="1" max="6" step="1" value="4" oninput="runPrediction()" class="w-full accent-purple-400">
+              <input type="range" id="tc-turns" min="1" max="6" step="1" value="4" oninput="runPrediction()" class="w-full accent-sky-400">
             </div>
           </div>
         </div>
 
-        <button onclick="runPrediction()" class="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition">
-          <i class="fa-solid fa-calculator mr-1.5"></i> Estimate Token Consumption & Budget
+        <button onclick="runPrediction()" class="w-full mt-6 py-3 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition">
+          <i class="fa-solid fa-calculator mr-1.5"></i> Estimate Token Consumption &amp; Budget
         </button>
       </div>
 
       <!-- Real-Time Outputs -->
-      <div class="lg:col-span-7 p-6 rounded-2xl glass-card flex flex-col justify-between space-y-6">
+      <div class="lg:col-span-7 panel p-6 flex flex-col justify-between space-y-6">
         <div>
           <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <h2 class="text-base font-display font-bold text-white tracking-tight flex items-center gap-2">
               <i class="fa-solid fa-chart-pie text-emerald-400"></i> Calibrated Execution Bounds
-            </h3>
+            </h2>
             <span class="badge-pill bg-emerald-500/20 text-emerald-300 font-mono text-[10px]">95% Guarantee</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Flattened Divider layout (no nested cards) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10 pb-4 border-b border-white/10">
             <!-- Point Estimate -->
-            <div class="p-4 rounded-xl bg-dark-950 border border-white/10">
+            <div class="pb-3 md:pb-0 md:pr-4">
               <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Estimated Point Usage</span>
-              <div id="tc-point-est" class="text-3xl font-extrabold text-white font-mono mt-1">1,840</div>
+              <div id="tc-point-est" class="text-3xl font-display font-extrabold text-white mt-1 tabular">1,840</div>
               <p class="text-[11px] text-gray-400 mt-1">Histogram Gradient Boosting point prediction</p>
             </div>
 
             <!-- Calibrated Upper Budget -->
-            <div class="p-4 rounded-xl bg-dark-950 border border-purple-500/30">
-              <span class="text-xs text-purple-300 uppercase tracking-wider font-semibold">Calibrated Upper Budget</span>
-              <div id="tc-upper-budget" class="text-3xl font-extrabold text-purple-400 font-mono mt-1">2,610</div>
+            <div class="pt-3 md:pt-0 md:pl-4">
+              <span class="text-xs text-sky-300 uppercase tracking-wider font-semibold">Calibrated Upper Budget</span>
+              <div id="tc-upper-budget" class="text-3xl font-display font-extrabold text-sky-400 mt-1 tabular">2,610</div>
               <p class="text-[11px] text-emerald-400 mt-1"><i class="fa-solid fa-shield-halved mr-1"></i> 95.33% Empirical Confidence Cap</p>
             </div>
           </div>
 
-          <!-- Token Split Breakdown -->
-          <div class="mt-4 p-4 rounded-xl bg-dark-950 border border-white/5 space-y-2 text-xs font-mono">
+          <!-- Token Split Breakdown (Divided list) -->
+          <div class="pt-4 space-y-2 text-xs font-mono">
             <div class="flex justify-between items-center text-gray-300">
               <span>Estimated Input Context:</span>
-              <span id="tc-input-tokens" class="text-indigo-300 font-bold">1,120 tokens</span>
+              <span id="tc-input-tokens" class="text-slate-200 font-bold tabular">1,120 tokens</span>
             </div>
             <div class="flex justify-between items-center text-gray-300">
               <span>Estimated Output Generation:</span>
-              <span id="tc-output-tokens" class="text-purple-300 font-bold">720 tokens</span>
+              <span id="tc-output-tokens" class="text-sky-300 font-bold tabular">720 tokens</span>
             </div>
             <div class="flex justify-between items-center text-gray-300 pt-2 border-t border-white/5">
               <span>Estimated Cost Buffer (USD):</span>
-              <span id="tc-cost-est" class="text-emerald-400 font-bold">$0.0052</span>
+              <span id="tc-cost-est" class="text-emerald-400 font-bold tabular">$0.0052</span>
             </div>
           </div>
         </div>
@@ -236,7 +266,7 @@
         <div>
           <div class="flex justify-between text-xs text-gray-400 mb-2">
             <span class="font-bold text-gray-300">Empirical Upper-Budget Coverage by Family (1,800 Confirmation Runs)</span>
-            <span class="font-mono text-purple-300">Target: 90%</span>
+            <span class="font-mono text-sky-300">Target: 90%</span>
           </div>
           <div class="h-44">
             <canvas id="tcFamilyChart"></canvas>
@@ -245,23 +275,23 @@
       </div>
     </div>
 
-    <!-- Roar HPC Supercomputer Architecture Details -->
-    <div class="p-6 rounded-2xl glass-card">
-      <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
-        <i class="fa-solid fa-server text-indigo-400"></i> Penn State Roar Supercomputer Experimental Setup
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-        <div class="p-4 rounded-xl bg-dark-950 border border-white/5">
+    <!-- Roar HPC Supercomputer Architecture Details (Zero nested cards) -->
+    <div class="panel p-6">
+      <h2 class="text-base font-display font-bold text-white tracking-tight mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-server text-teal-400"></i> Penn State Roar Supercomputer Experimental Setup
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 text-xs">
+        <div class="py-3 md:py-0 md:pr-4">
           <div class="font-bold text-white mb-1">1. Controlled Multi-turn Controller</div>
-          <p class="text-gray-400 leading-relaxed">Bounded 6-turn loop exercising local Qwen2.5-Coder models via Ollama. Intercepts bash execution, file writes, and code tests with zero unmonitored external calls.</p>
+          <p class="text-gray-400 leading-relaxed text-[11px]">Bounded 6-turn loop exercising local Qwen2.5-Coder models via Ollama. Intercepts bash execution, file writes, and code tests with zero unmonitored external calls.</p>
         </div>
-        <div class="p-4 rounded-xl bg-dark-950 border border-white/5">
-          <div class="font-bold text-white mb-1">2. Audit & Telemetry Validation</div>
-          <p class="text-gray-400 leading-relaxed">Verifies token arithmetic, prompt caching signatures, and process termination across Slurm node clusters. Preserves unsuccessful runs when telemetry is complete.</p>
+        <div class="py-3 md:py-0 md:px-4">
+          <div class="font-bold text-white mb-1">2. Audit &amp; Telemetry Validation</div>
+          <p class="text-gray-400 leading-relaxed text-[11px]">Verifies token arithmetic, prompt caching signatures, and process termination across Slurm node clusters. Preserves unsuccessful runs when telemetry is complete.</p>
         </div>
-        <div class="p-4 rounded-xl bg-dark-950 border border-white/5">
+        <div class="py-3 md:py-0 md:pl-4">
           <div class="font-bold text-white mb-1">3. Conformal Upper Budgeting</div>
-          <p class="text-gray-400 leading-relaxed">Uses 450 official calibration task groups to compute empirical task-group residual scores, establishing rigorous capacity reservation ceilings.</p>
+          <p class="text-gray-400 leading-relaxed text-[11px]">Uses 450 official calibration task groups to compute empirical task-group residual scores, establishing rigorous capacity reservation ceilings.</p>
         </div>
       </div>
     </div>
@@ -269,7 +299,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="mt-auto border-t border-white/10 glass-card py-6 px-6 text-xs text-gray-400">
+  <footer class="mt-auto border-t border-white/10 bg-dark-950 py-6 px-6 text-xs text-gray-400">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
         <p class="font-bold text-gray-200">Kartikeya Rana • TrueCost Project Lead</p>
@@ -297,9 +327,9 @@
             data: [98.2, 97.4, 96.8, 95.5, 95.1, 88.6, 87.9, 86.4],
             backgroundColor: function(context) {
               const val = context.dataset.data[context.dataIndex];
-              return val >= 90 ? 'rgba(16, 185, 129, 0.7)' : 'rgba(244, 63, 94, 0.7)';
+              return val >= 90 ? 'rgba(16, 185, 129, 0.75)' : 'rgba(244, 63, 94, 0.75)';
             },
-            borderRadius: 5
+            borderRadius: 4
           }]
         },
         options: {
@@ -309,8 +339,8 @@
             legend: { display: false }
           },
           scales: {
-            x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', font: { family: 'JetBrains Mono', size: 9 } } },
-            y: { min: 70, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', font: { family: 'JetBrains Mono', size: 9 } } }
+            x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', font: { family: 'IBM Plex Mono', size: 9 } } },
+            y: { min: 70, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', font: { family: 'IBM Plex Mono', size: 9 } } }
           }
         }
       });
@@ -325,38 +355,47 @@
       document.getElementById('tc-prompt-len-val').innerText = promptChars.toLocaleString() + ' chars';
       document.getElementById('tc-turns-val').innerText = turns + (turns === 1 ? ' turn' : ' turns');
 
-      // Base token estimation using empirical V1 model weights
-      const charToToken = 0.28;
-      const baseInput = Math.round(promptChars * charToToken);
+      // Model multiplier
+      const modelMultiplier = model === 'qwen-14b' ? 1.28 : 1.0;
 
-      const familyOutputMultipliers = {
-        coding: 420,
-        extraction: 180,
-        summarization: 350,
-        grounded_qa: 240,
-        math: 310,
-        tabular: 290,
-        classification: 60,
-        ideation: 460
+      // Base input tokens derived from characters (~4 chars per token) + system prompt (~350 tokens)
+      const baseInput = Math.round(promptChars / 3.8) + 350;
+      
+      // Family complexity multipliers
+      const familyWeights = {
+        coding: { outPerTurn: 220, turnExp: 1.15, q95_res: 780 },
+        extraction: { outPerTurn: 95, turnExp: 1.02, q95_res: 310 },
+        summarization: { outPerTurn: 280, turnExp: 1.05, q95_res: 450 },
+        grounded_qa: { outPerTurn: 160, turnExp: 1.08, q95_res: 520 },
+        math: { outPerTurn: 240, turnExp: 1.12, q95_res: 640 },
+        tabular: { outPerTurn: 180, turnExp: 1.10, q95_res: 690 },
+        classification: { outPerTurn: 45, turnExp: 1.01, q95_res: 190 },
+        ideation: { outPerTurn: 260, turnExp: 1.06, q95_res: 590 }
       };
 
-      const modelFactor = model === 'qwen-14b' ? 1.15 : 1.0;
-      const outPerTurn = (familyOutputMultipliers[family] || 300) * modelFactor;
-      const totalOutput = Math.round(outPerTurn * Math.sqrt(turns));
-      const totalInput = Math.round(baseInput + (turns > 1 ? (turns - 1) * 350 : 0));
+      const weights = familyWeights[family] || familyWeights.coding;
+      
+      // Cumulative calculation across multi-turn context accumulation
+      let totalInput = baseInput;
+      let totalOutput = 0;
+      let curContext = baseInput;
 
-      const totalPointTokens = totalInput + totalOutput;
-      // Calibrated 95% upper budget buffer (+ 38% based on residual scores from Roar calibration)
-      const upperBudget = Math.round(totalPointTokens * 1.38 + 180);
+      for (let t = 1; t <= turns; t++) {
+        const outT = Math.round(weights.outPerTurn * Math.pow(weights.turnExp, t) * modelMultiplier);
+        totalOutput += outT;
+        curContext += outT + 80; // Tool execution observations appended to context
+        if (t < turns) totalInput += curContext;
+      }
 
-      document.getElementById('tc-point-est').innerText = totalPointTokens.toLocaleString();
+      const pointEstimate = totalInput + totalOutput;
+      const upperBudget = pointEstimate + Math.round(weights.q95_res * modelMultiplier);
+      const costEstimate = ((totalInput * 0.0000015) + (totalOutput * 0.0000060)).toFixed(4);
+
+      document.getElementById('tc-point-est').innerText = pointEstimate.toLocaleString();
       document.getElementById('tc-upper-budget').innerText = upperBudget.toLocaleString();
       document.getElementById('tc-input-tokens').innerText = totalInput.toLocaleString() + ' tokens';
       document.getElementById('tc-output-tokens').innerText = totalOutput.toLocaleString() + ' tokens';
-
-      // Estimated cost calculation ($0.0015 / 1k input, $0.002 / 1k output)
-      const cost = (totalInput * 0.0000015) + (totalOutput * 0.000002);
-      document.getElementById('tc-cost-est').innerText = '$' + cost.toFixed(4);
+      document.getElementById('tc-cost-est').innerText = '$' + costEstimate;
     }
 
     window.addEventListener('DOMContentLoaded', () => {
