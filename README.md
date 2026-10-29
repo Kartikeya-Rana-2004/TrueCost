@@ -1,14 +1,22 @@
-# TrueCost
+# TrueCost: AI-Agent Token Usage & Calibrated Budget Predictor
+
+[![Live Playground](https://img.shields.io/badge/Live%20Playground-GitHub%20Pages-8b5cf6?style=for-the-badge&logo=google-chrome)](https://kartikeya-rana-2004.github.io/TrueCost/)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![HPC Infrastructure](https://img.shields.io/badge/HPC-Penn%20State%20Roar%20Slurm-indigo?style=for-the-badge)](https://www.icds.psu.edu/computing-services/roar/)
+[![Empirical Coverage](https://img.shields.io/badge/Coverage-95.33%25%20Calibrated-emerald?style=for-the-badge)](https://kartikeya-rana-2004.github.io/TrueCost/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ### Predict AI-agent token usage before execution. Compare it with what actually happened.
 
-TrueCost is a Penn State DS 440 team capstone studying how task characteristics and model choice affect the tokens consumed by an AI agent. We combine controlled local-LLM experiments on **ICDS Roar**, supervised regression, calibrated upper budgets, and post-execution feedback.
+TrueCost is a Penn State DS 440 capstone system studying how task characteristics and model choice affect the tokens consumed by an AI agent. We combine controlled local-LLM experiments on **ICDS Roar Supercomputer**, supervised regression, calibrated upper budgets, and post-execution feedback.
 
 An agent can make several model requests and tool calls before finishing a task. TrueCost estimates **cumulative input and output tokens across that execution**, using information available before the task starts. Its point estimate supports planning; its upper budget addresses the separate question of how much capacity to reserve.
 
+👉 **Try the Live Interactive Token Predictor & Budget Playground:** [**https://kartikeya-rana-2004.github.io/TrueCost/**](https://kartikeya-rana-2004.github.io/TrueCost/)
+
 **Stack:** Python · scikit-learn · pandas · NumPy · SciPy · joblib · SQLite · Linux/Bash · Slurm · Ollama · Qwen2.5-Coder 7B/14B
 
-[Final evaluation](ml_work/FINAL_REPORT.md) · [Frozen V1 release](releases/v1.0.0/) · [V2 research](ml_v2/README.md) · [Feedback module](truecost_feedback/README.md) · [Collection methods](docs/TrueCost_Final_Methods_Report.docx)
+[Live Dashboard](https://kartikeya-rana-2004.github.io/TrueCost/) · [Final evaluation](ml_work/FINAL_REPORT.md) · [Frozen V1 release](releases/v1.0.0/) · [V2 research](ml_v2/README.md) · [Feedback module](truecost_feedback/README.md) · [Collection methods](docs/TrueCost_Final_Methods_Report.docx)
 
 ## Current status
 
@@ -18,7 +26,7 @@ An agent can make several model requests and tool calls before finishing a task.
 | V1 point predictor and calibrated budget | Frozen; final confirmation evaluation complete |
 | V2 feature and execution-risk experiments | Exploratory; no replacement for V1 promoted |
 | Completion feedback | SQLite ledger, validation, reports, export, and predictor adapter implemented |
-| Runner integration and web dashboard | Planned |
+| Interactive web simulator & budget playground | **Live on GitHub Pages** |
 
 ## Results
 
@@ -83,7 +91,7 @@ Start with the final report for current V1 findings. Some earlier READMEs and re
 
 ### Clone and inspect
 
-Access to this private repository is required.
+Clone and inspect the open-source repository:
 
 ```bash
 git clone https://github.com/Kartikeya-Rana-2004/TrueCost.git
